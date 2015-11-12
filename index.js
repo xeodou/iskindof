@@ -6,8 +6,8 @@
 
 'use strict'
 
-const toString = Object.prototype.toString
-const kinds = [
+var toString = Object.prototype.toString
+var kinds = [
   'String',
   'Boolean',
   'Array',
@@ -19,14 +19,14 @@ const kinds = [
   'Arguments'
 ]
 
-let kindof = module.exports = {}
+var kindof = module.exports = {}
 
-let f = (t) => { }
-
-kinds.forEach(k => {
-  kindof[`is${k}`] = (i) => toString.call(i) === `[object ${k}]`
+kinds.forEach(function (k) {
+  kindof['is' + k] = function (i) {
+    return toString.call(i) === '[object ' + k + ']'
+  }
 })
 
-kindof.isNumber = (i) => {
+kindof.isNumber = function (i) {
   return isNaN(i) ? false : toString.call(i) === '[object Number]'
 }
