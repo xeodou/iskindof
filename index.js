@@ -16,7 +16,9 @@ var kinds = [
   'Date',
   'Null',
   'Undefined',
-  'Arguments'
+  'Arguments',
+  'AsyncFunction',
+  'Promise'
 ]
 
 var kindof = module.exports = {}

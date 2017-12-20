@@ -147,3 +147,38 @@ test('KindOf Date', (t) => {
   t.equal(_.isDate(), false)
 
 })
+
+test('KindOf AsyncFunction', (t) => {
+  t.plan(11)
+
+  t.equal(_.isAsyncFunction(async () =>{}), true)
+  t.equal(_.isAsyncFunction(new Date()), false)
+  t.equal(_.isAsyncFunction({}), false)
+  t.equal(_.isAsyncFunction(null), false)
+  t.equal(_.isAsyncFunction([]), false)
+  t.equal(_.isAsyncFunction(1), false)
+  t.equal(_.isAsyncFunction(undefined), false)
+  t.equal(_.isAsyncFunction(noop), false)
+  t.equal(_.isAsyncFunction('string'), false)
+  t.equal(_.isAsyncFunction(NaN), false)
+  t.equal(_.isAsyncFunction(), false)
+
+})
+
+test('KindOf Promise', (t) => {
+  t.plan(12)
+
+  t.equal(_.isPromise(new Promise(() =>{})), true)
+  t.equal(_.isPromise(async () =>{}), false)
+  t.equal(_.isPromise(new Date()), false)
+  t.equal(_.isPromise({}), false)
+  t.equal(_.isPromise(null), false)
+  t.equal(_.isPromise([]), false)
+  t.equal(_.isPromise(1), false)
+  t.equal(_.isPromise(undefined), false)
+  t.equal(_.isPromise(noop), false)
+  t.equal(_.isPromise('string'), false)
+  t.equal(_.isPromise(NaN), false)
+  t.equal(_.isPromise(), false)
+
+})
