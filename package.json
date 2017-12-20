@@ -1,6 +1,6 @@
 {
   "name": "iskindof",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "iskindof type in JavaScript",
   "main": "index.js",
   "scripts": {
@@ -23,5 +23,8 @@
     "istanbul": "^0.4.0",
     "tap-spec": "^4.1.0",
     "tape": "^4.2.2"
+  },
+  "engines" : {
+    "node" : ">=8.0.0"
   }
 }
